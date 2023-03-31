@@ -1,9 +1,9 @@
 #!/bin/zsh
 
-for file in $(find . -name "*.txt"); do
+for file in $(find . -name "*.png"); do
 	pngfilename=$(basename -- "$file")
 	pngfilename="${pngfilename%.*}"
-	png_file="${pngfilename}.png"
+	png_file="../images/${pngfilename}.png"
 
 	echo "${file} -> ${png_file}"
 	cat $file | git lfs smudge > $png_file
